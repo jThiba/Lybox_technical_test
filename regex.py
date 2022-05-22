@@ -20,7 +20,17 @@ def get_price(tab):
     return ("yes")
 
 def process_extract_rent(tab):
-    return ("yes")
+    res = 0
+
+    for i in range(len(tab)):
+        if (tab[i] == "€" or tab[i] == "EUR" or tab[i] == "euros"):
+            res = int(tab[i - 1]) * 12
+            break
+        elif (check_split(tab[i]) == True):
+            price = tab[i].split('/')
+            value = Decimal(sub(r'[^\d.]', '', price[0]))
+            res = int(value) * 12
+    return res
 
 def extract_rent(tab):
     res = 0
