@@ -18,7 +18,14 @@ def process_extract_rent(tab):
     return ("yes")
 
 def extract_rent(tab):
-    return ("yes")
+    res = 0
+
+    if (check_time(tab) == False):
+        res = process_extract_rent(tab)
+        return res
+    else:
+        res = get_price(tab)
+        return res
 
 def main():
     res = 0
