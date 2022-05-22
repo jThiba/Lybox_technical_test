@@ -6,7 +6,12 @@ def check_split_time(str):
     return ("yes")
 
 def check_time(tab):
-    return ("yes")
+    for i in range(len(tab)):
+        if (tab[i] == 'an'):
+            return True
+        elif (check_split_time(tab[i]) == True):
+            return True
+    return False
 
 def check_split(str):
     return ("yes")
