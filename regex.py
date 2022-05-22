@@ -3,7 +3,10 @@ from re import sub
 from decimal import Decimal
 
 def check_split_time(str):
-    return ("yes")
+    for i in range(len(str)):
+        if (str[i] == '/' and str[i + 1] == 'a' and str[i + 2] == 'n'):
+            return True
+    return False
 
 def check_time(tab):
     for i in range(len(tab)):
