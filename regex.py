@@ -17,7 +17,13 @@ def check_split(str):
     return ("yes")
 
 def get_price(tab):
-    return ("yes")
+    res = 0
+
+    for i in range(len(tab)):
+        if (tab[i] == "€" or tab[i] == "EUR" or tab[i] == "euros"):
+            res = int(tab[i - 1])
+            break
+    return res
 
 def process_extract_rent(tab):
     res = 0
