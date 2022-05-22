@@ -14,7 +14,10 @@ def check_time(tab):
     return False
 
 def check_split(str):
-    return ("yes")
+    for i in range(len(str)):
+        if ((str[i - 1] == '€'or str[i - 1] == 's' or str[i - 1] == 'R') and str[i] == '/'):
+            return True
+    return False
 
 def get_price(tab):
     res = 0
